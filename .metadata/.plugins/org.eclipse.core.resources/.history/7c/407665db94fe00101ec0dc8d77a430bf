@@ -1,0 +1,43 @@
+package arrays.ejercicios;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Ejercicio3 {
+	final static int FILA =3;
+	final static int COLUM =4;
+	/**
+	 * Funcíon que toma una una matriz y la muestra por pantalla
+	 * @param matriz array bidimensional de números enteros
+	 */
+	public static void mostrarMatriz(int[][] matriz) {
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[i].length; j++) {
+				System.out.print(matriz[i][j]+"\t");
+			}
+			System.out.println();
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		int[][] matriz = new int[FILA][COLUM];
+		
+		// Crear un objeto de Scanner
+		Scanner sc = new Scanner(System.in);
+		try {
+			for (int i = 0; i < matriz.length; i++) {
+				for (int j = 0; j < matriz[i].length; j++) {
+					System.out.print("Valor["+i+"]["+j+"]: ");
+					matriz[i][j] = sc.nextInt();
+				}
+			}
+		} catch (InputMismatchException e) {
+			// TODO: handle exception
+		}
+		mostrarMatriz(matriz);
+		
+
+	}
+
+}

@@ -1,0 +1,68 @@
+package arrays.ejercicios;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Ejercicio4 {
+	final static int FILA =5;
+	final static int COLUM =3;
+	/**
+	 * Funcíon que toma una una matriz y la muestra por pantalla
+	 * @param matriz array bidimensional de números enteros
+	 */
+	public static void mostrarMatriz(int[][] matriz) {
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[i].length; j++) {
+				System.out.print(matriz[i][j]+"\t");
+			}
+			System.out.println();
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		int[][] matriz = new int[FILA][COLUM];
+		
+		// declarar variables que recebiran las sumas de las filas
+		int mayor,menor,media,conta,suma;
+		// Crear un objeto de Scanner
+		Scanner sc = new Scanner(System.in);
+		try {
+			for (int i = 0; i < matriz.length; i++) {
+				for (int j = 0; j < matriz[i].length; j++) {
+					System.out.print("Valor["+i+"]["+j+"]: ");
+					matriz[i][j] = sc.nextInt();
+				}
+			}
+		} catch (InputMismatchException e) {
+			// TODO: handle exception
+		}
+	
+		mostrarMatriz(matriz);
+		
+		mayor=menor=matriz[0][0];
+		conta = FILA * COLUM;
+		suma=0;
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[i].length; j++) {
+				
+				if(matriz[i][j] > mayor)
+					mayor=matriz[i][j];
+				
+				if(matriz[i][j] < menor)
+					menor=matriz[i][j];
+				
+				suma+=matriz[i][j];
+			}
+			
+		}
+		
+		//Mostrar los resultados
+		System.out.println("Mayor: "+mayor);
+		System.out.println("Menor: "+menor);
+		System.out.println("Media: "+(suma/conta));
+		
+
+	}
+
+}

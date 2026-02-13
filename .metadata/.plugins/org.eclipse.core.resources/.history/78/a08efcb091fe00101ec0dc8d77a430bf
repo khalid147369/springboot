@@ -1,0 +1,29 @@
+package arrays.ejercicios;
+
+public class Ejercicio2 {
+	final static int FILA =8;
+	final static int COLUM =6;
+	
+	public static void mostrarMatriz(int[][] matriz) {
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[i].length; j++) {
+				System.out.print(matriz[i][j]+"\t");
+			}
+			System.out.println();
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		int[][] matriz = new int[FILA][COLUM];
+		
+		for (int i = 0; i < matriz.length; i++) {
+			matriz[0][i]++;
+		}
+		
+		mostrarMatriz(matriz);
+		
+
+	}
+
+}
