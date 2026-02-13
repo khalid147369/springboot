@@ -38,13 +38,14 @@ public class DoctorsController {
 
     @PostMapping("/api/doctors")
     public ResponseEntity<?> createDoctor(
-            @RequestParam("nombre") String nombre,
-            @RequestParam("contacto") String contacto,
-            @RequestParam("especialidad") String especialidad,
-            @RequestParam("file") MultipartFile file) {
+            @RequestParam("name") String name,
+            @RequestParam("contact") String contact,
+            @RequestParam("speciality") String speciality,
+            @RequestParam("avatar") MultipartFile file,
+          @RequestParam("rating") Double rating) {
         try {
             String avatarUrl = cloudinaryImageService.uploadImage(file, "doctors/avatars");
-            Doctor doctor = new Doctor(nombre, contacto, especialidad, avatarUrl);
+            Doctor doctor = new Doctor(name, contact, speciality, avatarUrl,rating);
             Doctor savedDoctor = doctorRepository.save(doctor);
             return ResponseEntity.ok(savedDoctor);
         } catch (Exception e) {

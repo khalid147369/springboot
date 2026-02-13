@@ -4,43 +4,54 @@ package com.khalid.myApp.DTO;
 
 public class DoctorDTO {
 
-    private String nombre;
-    private String especialidad;
-    private String contacto;
-    private String AvatarPath;
+    private String name;
+    private String specialty;
+    private String contact;
+    private String avatar;
+    private Double rating;
 
     public DoctorDTO() {
     }
-    public DoctorDTO(String nombre, String especialidad, String contacto, String avatarPath) {
-        this.nombre = nombre;
-        this.especialidad = especialidad;
-        this.contacto = contacto;
-        this.AvatarPath = avatarPath;
+    public DoctorDTO(String name, String specialty, String contact, String avatar,Double rating ) {
+        this.name = name;
+        this.specialty = specialty;
+        this.contact = contact;
+        this.avatar = avatar;
+        this.rating = rating;
+
     }
     public String getNombre() {
-        return nombre;
+        return name;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String name) {
+        this.name = name;
     }
     public String getEspecialidad() {
-        return especialidad;
+        return specialty;
     }
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+    public void setEspecialidad(String specialty) {
+        this.specialty = specialty;
     }
     public String getContacto() {
-        return contacto;
+        return contact;
     }
-    public void setContacto(String contacto) {
-        this.contacto = contacto;
+    public void setContacto(String contact) {
+        this.contact = contact;
     }
-    public String getAvatarPath() {
-        return AvatarPath;
+    public String getAvataR() {
+        return avatar;
     }
-    public void setAvatarPath(String avatarPath) {
-        AvatarPath = avatarPath;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
+
+    public Double getRating() {
+        return rating;
+    }
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+    
     
 
 }

@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
 @Entity
 @Table(name="doctors")
 
@@ -13,18 +14,23 @@ public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    private String especialidad;
-    private String contacto;
+    private String name;
+    private String specialty;
+    private String contact;
     private String AvatarPath;
+    @DecimalMin("0.0")
+    @DecimalMax("5.0")
+    private Double rating;
 
     public Doctor() {
     }
-    public Doctor( String nombre, String contacto, String especialidad , String AvatarPath) {
-        this.nombre = nombre;
-        this.contacto = contacto;
-        this.especialidad = especialidad;
+    public Doctor( String name, String contact, String specialty
+ , String AvatarPath,Double rating) {
+        this.name = name;
+        this.contact = contact;
+        this.specialty= specialty;
         this.AvatarPath = AvatarPath;
+        this.rating=rating;
     }
 
     public Long getId() {
@@ -34,28 +40,39 @@ public class Doctor {
         this.id = id;
     }
     public String getNombre() {
-        return nombre;
+        return name;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String name) {
+        this.name = name;
     }
     public String getEspecialidad() {
-        return especialidad;
+        return specialty
+;
     }
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+    public void setEspecialidad(String specialty
+
+    ) {
+        this.specialty
+ = specialty
+;
     }
     public String getContacto() {
-        return contacto;
+        return contact;
     }
-    public void setContacto(String contacto) {
-        this.contacto = contacto;
+    public void setContacto(String contact) {
+        this.contact = contact;
     }   
     public String getAvatarPath() {
         return AvatarPath;
     }
     public void setAvatarPath(String avatarPath) {
         AvatarPath = avatarPath;
+    }
+    public Double getRating() {
+        return rating;
+    }
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 
 

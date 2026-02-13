@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "MyAppApplication",
+      "request": "launch",
+      "mainClass": "com.khalid.myApp.MyAppApplication",
+      "projectName": "myApp"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot - MyApp",
+      "request": "launch",
+      "mainClass": "com.khalid.myApp.MyAppApplication",
+      "projectName": "toDoList",
+      "env": {
+        "DB_PASSWORD": "AVNS_Ett3pXTkFS883ZkRciU",
+        "DB_URL": "jdbc:mysql://reayaproject-13c080a4-rabaaouikhalid-5fff.l.aivencloud.com:21576/reayaDB?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&sslMode=REQUIRED",
+        "DB_USER": "avnadmin",
+        "CL_NAME": "dwxkdvgxk",
+        "CL_KEY": "222754938185799",
+        "CL_SECRET": "U1So-edmPp9gBa-HJGn-ld9tNH0"
+      }
+    }
+  ]
+}
