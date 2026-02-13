@@ -9,4 +9,4 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-alpine
 # Copiamos el archivo .jar que se acaba de fabricar en la fase anterior
 COPY --from=build /target/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"] 
